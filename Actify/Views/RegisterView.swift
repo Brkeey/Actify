@@ -8,10 +8,42 @@
 import SwiftUI
 
 struct RegisterView: View {
+    @State private var name: String = ""
+    @State private var email: String = ""
+    @State private var password: String = ""
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationStack {
+            VStack {
+                HeaderView()
+                registerForm
+                BigButton(title: "Register", action: {})
+            }
+        }
+    }
+    
+    var registerForm: some View {
+        Form {
+            Section(header: Text("Register Form")) {
+                TextField("Enter Your Name", text: $name)
+                    .autocorrectionDisabled()
+                TextField("Email", text: $email)
+                    .autocorrectionDisabled()
+                    .autocapitalization(.none)
+                SecureField("Password", text: $password)
+                
+            }
+        }
+        .frame(height: 200)
     }
 }
+
+
+
+
+
+
+
 
 #Preview {
     RegisterView()
