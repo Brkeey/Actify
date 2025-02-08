@@ -1,6 +1,7 @@
 {
   "images" : [
     {
+      "filename" : "actify-logo.PNG",
       "idiom" : "universal",
       "platform" : "ios",
       "size" : "1024x1024"
@@ -12,6 +13,7 @@
           "value" : "dark"
         }
       ],
+      "filename" : "actify-logo 1.PNG",
       "idiom" : "universal",
       "platform" : "ios",
       "size" : "1024x1024"
@@ -23,6 +25,7 @@
           "value" : "tinted"
         }
       ],
+      "filename" : "actify-logo 2.PNG",
       "idiom" : "universal",
       "platform" : "ios",
       "size" : "1024x1024"
