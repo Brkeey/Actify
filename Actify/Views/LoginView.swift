@@ -15,8 +15,9 @@ struct LoginView: View {
             VStack {
                 HeaderView()
                 loginForm
-                BigButton(title: "Login", action: viewModel.login)
                 Spacer()
+                errorMessageView
+                BigButton(title: "Login", action: viewModel.login)
                 NavigationLink("Don't you have an account?", destination: RegisterView())
             }
         }
@@ -24,16 +25,17 @@ struct LoginView: View {
     
     var loginForm: some View {
         Form {
-            if !viewModel.errorMessage.isEmpty {
-                Text(viewModel.errorMessage)
-                    .foregroundColor(.red)
-            }
             TextField ("Email", text: $viewModel.email)
                 .autocorrectionDisabled()
                 .autocapitalization(.none)
             SecureField("Password", text: $viewModel.password)
         }
         .frame(height: 150)
+    }
+    
+    var errorMessageView: some View {
+        Text(viewModel.errorMessage.isEmpty ? " " : viewModel.errorMessage)
+            .foregroundColor(.red)
     }
 }
 
