@@ -11,5 +11,4 @@ class ProfileViewViewModel:ObservableObject {
     init () {
         
     }
-    
 }

@@ -4,7 +4,7 @@
 //
 //  Created by Berke Yılmaz on 8.02.2025.
 //
-
+import FirebaseAuth
 import Foundation
 
 class LoginViewViewModel: ObservableObject {
@@ -18,7 +18,7 @@ class LoginViewViewModel: ObservableObject {
     
     func login() {
         guard validate() else { return }
-        
+        Auth.auth().signIn(withEmail: email, password: password)
     }
     
     func validate() -> Bool {
